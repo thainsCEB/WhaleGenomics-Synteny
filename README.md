@@ -10,6 +10,16 @@
 
 sh LASTAL.sh
 
+### WhaleRefA.txt
+  
+  OrcOrc1	OOR
+  SteCoe1	SCO
+
+### WhaleQueryA.txt
+
+  GloMel1	GME
+  LagAlb1	LAL
+  
 sh LASTAL-to-SyntenyJCVI.sh
 
 Still finishing this file (08/15/24)
