@@ -1,0 +1,1 @@
+MesDen1	GCA_025265405.1_mMesDen1_primary_haplotype_genomic.fna.masked	MDE
