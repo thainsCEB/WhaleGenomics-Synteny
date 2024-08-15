@@ -4,7 +4,7 @@
 
 sh FormatChromosomeFasta_for_Synteny.sh
 
-## WhaleSpecies.txt
+### WhaleSpecies.txt
 
 
 sh LASTAL.sh
