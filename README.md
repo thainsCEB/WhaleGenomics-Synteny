@@ -10,6 +10,6 @@
 
 ## Input a list of References and Query species using the species codes (First letter of Genus name followed by the first two letters of the Species name in all caps) as the $1 and $2 variable for this shell script.
 
-sh LASTAL-to-SyntenyJCVI.sh
+sh LASTAL-to-SyntenyJCVI.sh Reference.list Query.list
 
 Still finishing this file (08/15/24)
