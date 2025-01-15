@@ -4,7 +4,7 @@
 #### Format Chromosome Fasta files
 Reformat each genome fasta file that was downloaded from NCBI to change and retain only chromosomes and rename them using a cytogenetic format (First letter of Genus name followed by first two letters of the species name in capitals followed by chromosome number/name (1 through X and Y)
 
-	sh FormatChromosomeFasta.sh Genomes.txt
+	sh FormatChromosomeFasta_for_Synteny.sh Genomes.txt
 
 Example of Genomes.txt:
 	
