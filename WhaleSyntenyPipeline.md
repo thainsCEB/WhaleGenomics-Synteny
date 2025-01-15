@@ -13,9 +13,9 @@ Pick a species from every other two as Reference individuals and the species abo
 For example, RefA.txt is run with QueryA.txt and QueryB.txt and RefB.txt is run with QueryC.txt and QueryD.txt and so on.
 
 ## Run with RefA.txt and QueryA.txt
-```
+
 sh Lastal.sh
-```
+
 ## Run with RefA.txt and QueryB.txt
 sh Lastal.sh
 
