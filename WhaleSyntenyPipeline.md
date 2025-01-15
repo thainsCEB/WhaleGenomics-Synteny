@@ -1,3 +1,4 @@
+#### Format Chromosome Fasta files
 Reformat each genome fasta file that was downloaded from NCBI to change retain only chromosomes and rename them using a cytogenetic format (First letter of Genus name followed by first two letters of the species name in capitals followed by chromozome number/name (1 through X and Y)
 
 	sh FormatChromosomeFasta.sh Genomes.txt
@@ -12,11 +13,11 @@ Based on the phylogeny order the species from the root to the most recent tips s
 Pick a species from every other two as Reference individuals and the species above and below the Reference as Query species. You will generate a Ref file and Query file with two species in each file, however, for every reference file there are two query files
 For example, RefA.txt is run with QueryA.txt and QueryB.txt and RefB.txt is run with QueryC.txt and QueryD.txt and so on.
 
-### Run with RefA.txt and QueryA.txt
+#### Run with RefA.txt and QueryA.txt
 
 	sh Lastal.sh
 
-### Run with RefA.txt and QueryB.txt
+#### Run with RefA.txt and QueryB.txt
 	sh Lastal.sh
 
 Example of WhaleRef.txt
@@ -29,7 +30,7 @@ Example of WhaleQuery.txt
 	GloMel1	GME
 	LagAlb1	LAL
 
-## Convert filtered MAFs for Synteny Plot
+#### Convert filtered MAFs for Synteny Plot
 When all species have been aligned to a reference with LAST, convert MAFs into files for JCVI to use
 Run with a list of all the References in one file using the cytogenetic format name and a Query file with all query species using the cytogenetic format name.
 
@@ -66,7 +67,7 @@ Example of Query.list
 	BMU
 	BAC
 
-### Generate the seqids file for JCVI
+#### Generate the seqids file for JCVI
 Have a list of all Species fasta names (with the .fasta) in the order of the phylogeny
 
 	sh GenerateSeqIDs.sh SpeciesOrder.txt
@@ -93,9 +94,10 @@ SpeciesOrder.txt
 	EubGla1
 	HipAmp2
 
-### Generate layout file
+#### Generate layout file
 Using the layout template file provided, edit in a text editting software
 
+### Run JCVI
 	python -m jcvi.graphics.karyotype pangolin_seqids layout_pangolins --notex --figsize=13x11 --dpi=600 --format=pdf -o 		Pangolin_karyotype.pdf
 
 # Get Pairwise divergence from each pairwise alignment using maffilter
