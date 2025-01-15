@@ -102,13 +102,13 @@ Using the layout template file provided, edit in a text editting software
 
 	maffilter input.file=DDE-TTR.1-1.renamed.maf input.file.compression=none output.log=DDE-TTR.1-1.maf.log params=paramsA.txt
 
-Calculate average PairwiseDivergence
+#### Calculate average PairwiseDivergence
 	cat Downloads/GME-OOR.summary.txt| awk '{sum+=$20} END {print sum/NR}'
 
-Number of synteny block >1Kbp
+#### Number of synteny block >1Kbp
 	cat Downloads/GME-OOR.summary.txt| tail -n+2 | wc -l
 
-Calculate average size of synteny blocks >1Kbp
+#### Calculate average size of synteny blocks >1Kbp
 	cat Downloads/GME-OOR.summary.txt | awk '{sum+=$4} END {print sum/NR}'
 
 params.txt
