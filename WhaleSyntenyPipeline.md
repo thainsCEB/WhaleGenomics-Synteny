@@ -1,3 +1,6 @@
+# Whale Synteny analysis using LAST and JCVI
+
+### Prepare files
 #### Format Chromosome Fasta files
 Reformat each genome fasta file that was downloaded from NCBI to change retain only chromosomes and rename them using a cytogenetic format (First letter of Genus name followed by first two letters of the species name in capitals followed by chromozome number/name (1 through X and Y)
 
@@ -113,7 +116,8 @@ Using the layout template file provided, edit in a text editting software
 #### Calculate average size of synteny blocks >1Kbp
 	cat Downloads/GME-OOR.summary.txt | awk '{sum+=$4} END {print sum/NR}'
 
-params.txt
+Example of params.txt for maffilter
+
 	maf.filter=\
 	MinBlockLength(min_length=1000),\
 	SequenceStatistics(\
