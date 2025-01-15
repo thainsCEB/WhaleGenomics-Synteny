@@ -8,13 +8,14 @@ sh FormatChromosomeFasta.sh Genomes.txt
 	mGloMel1	/mnt/nfs/volume1/bucket/Combined_Storage/thains/WhaleGenomes/GCA_963455315.2_mGloMel1.2_genomic.fna	GME
 
 ### Run LAST 
-# Based on the phylogeny order the species from the root to the most recent tips so that when you generate the synteny plot, the order from top to bottom matches the position in a phylogenetic tree
-# Pick a species from every other two as Reference individuals and the species above and below the Reference as Query species. You will generate a Ref file and Query file with two species in each file, however, for every reference file there are two query files
-# For example, RefA.txt is run with QueryA.txt and QueryB.txt and RefB.txt is run with QueryC.txt and QueryD.txt and so on.
+Based on the phylogeny order the species from the root to the most recent tips so that when you generate the synteny plot, the order from top to bottom matches the position in a phylogenetic tree
+Pick a species from every other two as Reference individuals and the species above and below the Reference as Query species. You will generate a Ref file and Query file with two species in each file, however, for every reference file there are two query files
+For example, RefA.txt is run with QueryA.txt and QueryB.txt and RefB.txt is run with QueryC.txt and QueryD.txt and so on.
 
 ## Run with RefA.txt and QueryA.txt
+```
 sh Lastal.sh
-
+```
 ## Run with RefA.txt and QueryB.txt
 sh Lastal.sh
 
