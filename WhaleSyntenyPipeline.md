@@ -1,6 +1,6 @@
 ### Reformat each genome fasta file that was downloaded from NCBI to change retain only chromosomes and rename them using a cytogenetic format (First letter of Genus name followed by first two letters of the species name in capitals followed by chromozome number/name (1 through X and Y)
 
-sh FormatChromosomeFasta.sh Genomes.txt
+	sh FormatChromosomeFasta.sh Genomes.txt
 
 ## Example of Genomes.txt
 	
@@ -14,10 +14,10 @@ For example, RefA.txt is run with QueryA.txt and QueryB.txt and RefB.txt is run 
 
 ## Run with RefA.txt and QueryA.txt
 
-sh Lastal.sh
+	sh Lastal.sh
 
 ## Run with RefA.txt and QueryB.txt
-sh Lastal.sh
+	sh Lastal.sh
 
 ## Example of WhaleRef.txt
 
@@ -33,7 +33,7 @@ sh Lastal.sh
 # When all species have been aligned to a reference with LAST, convert MAFs into files for JCVI to use
 # Run with a list of all the References in one file using the cytogenetic format name and a Query file with all query species using the cytogenetic format name.
 
-sh LASTAL-to-SyntenyJCVI.sh Ref.list Query.list
+	sh LASTAL-to-SyntenyJCVI.sh Ref.list Query.list
 
 ## Example of Ref.list
 
@@ -69,7 +69,7 @@ sh LASTAL-to-SyntenyJCVI.sh Ref.list Query.list
 ## Generate the seqids file for JCVI
 # Have a list of all Species fasta names (with the .fasta) in the order of the phylogeny
 
-sh GenerateSeqIDs.sh SpeciesOrder.txt
+	sh GenerateSeqIDs.sh SpeciesOrder.txt
 
 ## SpeciesOrder.txt
 
@@ -96,20 +96,20 @@ sh GenerateSeqIDs.sh SpeciesOrder.txt
 ## Generate layout file
 # using a template file provided  ....., edit in a text editting software
 
-python -m jcvi.graphics.karyotype pangolin_seqids layout_pangolins --notex --figsize=13x11 --dpi=600 --format=pdf -o Pangolin_karyotype.pdf
+	python -m jcvi.graphics.karyotype pangolin_seqids layout_pangolins --notex --figsize=13x11 --dpi=600 --format=pdf -o 		Pangolin_karyotype.pdf
 
 ### Get Pairwise divergence from each pairwise alignment using maffilter
 
-maffilter input.file=DDE-TTR.1-1.renamed.maf input.file.compression=none output.log=DDE-TTR.1-1.maf.log params=paramsA.txt
+	maffilter input.file=DDE-TTR.1-1.renamed.maf input.file.compression=none output.log=DDE-TTR.1-1.maf.log params=paramsA.txt
 
 # Calculate average PairwiseDivergence
-cat Downloads/GME-OOR.summary.txt| awk '{sum+=$20} END {print sum/NR}'
+	cat Downloads/GME-OOR.summary.txt| awk '{sum+=$20} END {print sum/NR}'
 
 # Number of synteny block >1Kbp
-cat Downloads/GME-OOR.summary.txt| tail -n+2 | wc -l
+	cat Downloads/GME-OOR.summary.txt| tail -n+2 | wc -l
 
 # Calculate average size of synteny blocks >1Kbp
-cat Downloads/GME-OOR.summary.txt | awk '{sum+=$4} END {print sum/NR}'
+	cat Downloads/GME-OOR.summary.txt | awk '{sum+=$4} END {print sum/NR}'
 
 ## params.txt
 
