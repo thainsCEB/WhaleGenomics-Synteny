@@ -71,7 +71,7 @@ Have a list of all Species fasta names (with the .fasta) in the order of the phy
 
 	sh GenerateSeqIDs.sh SpeciesOrder.txt
 
-## SpeciesOrder.txt
+### SpeciesOrder.txt
 
 	GloMel1
 	OrcOrc1
@@ -93,25 +93,25 @@ Have a list of all Species fasta names (with the .fasta) in the order of the phy
 	EubGla1
 	HipAmp2
 
-## Generate layout file
-# using a template file provided  ....., edit in a text editting software
+# Generate layout file
+Using the layout template file provided, edit in a text editting software
 
 	python -m jcvi.graphics.karyotype pangolin_seqids layout_pangolins --notex --figsize=13x11 --dpi=600 --format=pdf -o 		Pangolin_karyotype.pdf
 
-### Get Pairwise divergence from each pairwise alignment using maffilter
+# Get Pairwise divergence from each pairwise alignment using maffilter
 
 	maffilter input.file=DDE-TTR.1-1.renamed.maf input.file.compression=none output.log=DDE-TTR.1-1.maf.log params=paramsA.txt
 
-# Calculate average PairwiseDivergence
+## Calculate average PairwiseDivergence
 	cat Downloads/GME-OOR.summary.txt| awk '{sum+=$20} END {print sum/NR}'
 
-# Number of synteny block >1Kbp
+## Number of synteny block >1Kbp
 	cat Downloads/GME-OOR.summary.txt| tail -n+2 | wc -l
 
-# Calculate average size of synteny blocks >1Kbp
+## Calculate average size of synteny blocks >1Kbp
 	cat Downloads/GME-OOR.summary.txt | awk '{sum+=$4} END {print sum/NR}'
 
-## params.txt
+### params.txt
 
 	maf.filter=\
 	MinBlockLength(min_length=1000),\
