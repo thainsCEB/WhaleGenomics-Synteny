@@ -2,11 +2,11 @@
 
 ### Prepare files
 #### Format Chromosome Fasta files
-Reformat each genome fasta file that was downloaded from NCBI to change retain only chromosomes and rename them using a cytogenetic format (First letter of Genus name followed by first two letters of the species name in capitals followed by chromozome number/name (1 through X and Y)
+Reformat each genome fasta file that was downloaded from NCBI to change and retain only chromosomes and rename them using a cytogenetic format (First letter of Genus name followed by first two letters of the species name in capitals followed by chromosome number/name (1 through X and Y)
 
 	sh FormatChromosomeFasta.sh Genomes.txt
 
-Example of Genomes.txt
+Example of Genomes.txt:
 	
 	mDelDel1	/mnt/nfs/volume1/bucket/Combined_Storage/thains/WhaleGenomes/GCA_949987515.2_mDelDel1.2_genomic.fna	DDE
 	mGloMel1	/mnt/nfs/volume1/bucket/Combined_Storage/thains/WhaleGenomes/GCA_963455315.2_mGloMel1.2_genomic.fna	GME
@@ -23,12 +23,12 @@ For example, RefA.txt is run with QueryA.txt and QueryB.txt and RefB.txt is run 
 #### Run with RefA.txt and QueryB.txt
 	sh Lastal.sh
 
-Example of WhaleRef.txt
+Example of WhaleRef.txt:
 
 	OrcOrc1	OOR
 	SteCoe1	SCO
 	
-Example of WhaleQuery.txt
+Example of WhaleQuery.txt:
 
 	GloMel1	GME
 	LagAlb1	LAL
@@ -39,7 +39,7 @@ Run with a list of all the References in one file using the cytogenetic format n
 
 	sh LASTAL-to-SyntenyJCVI.sh Ref.list Query.list
 
-Example of Ref.list
+Example of Ref.list:
 
 	OOR
 	SCO
@@ -51,7 +51,7 @@ Example of Ref.list
 	ERO
 	EGL
 
-Example of Query.list
+Example of Query.list:
 
 	GME
 	LAL
@@ -75,7 +75,7 @@ Have a list of all Species fasta names (with the .fasta) in the order of the phy
 
 	sh GenerateSeqIDs.sh SpeciesOrder.txt
 
-SpeciesOrder.txt
+Example of SpeciesOrder.txt:
 
 	GloMel1
 	OrcOrc1
@@ -103,8 +103,8 @@ Using the layout template file provided, edit in a text editting software
 ### Run JCVI
 	python -m jcvi.graphics.karyotype pangolin_seqids layout_pangolins --notex --figsize=13x11 --dpi=600 --format=pdf -o 		Pangolin_karyotype.pdf
 
-# Get Pairwise divergence from each pairwise alignment using maffilter
-
+# Pairwise divergence using maffilter
+Run maffilter:
 	maffilter input.file=DDE-TTR.1-1.renamed.maf input.file.compression=none output.log=DDE-TTR.1-1.maf.log params=paramsA.txt
 
 #### Calculate average PairwiseDivergence
@@ -116,7 +116,7 @@ Using the layout template file provided, edit in a text editting software
 #### Calculate average size of synteny blocks >1Kbp
 	cat Downloads/GME-OOR.summary.txt | awk '{sum+=$4} END {print sum/NR}'
 
-Example of params.txt for maffilter
+Example of params.txt for maffilter:
 
 	maf.filter=\
 	MinBlockLength(min_length=1000),\
